@@ -1,0 +1,37 @@
+.classTemplate {
+  background-color: grey;
+  font-size: 20px;
+}
+
+// scss示例
+// 定义变量
+$primary-color: #3eac7c;
+$secondary-color: #766fa5;
+
+// 定义样式
+.header {
+  font-size: 24px;
+  color: $primary-color;
+  text-align: center;
+
+  // 嵌套样式
+  .subheader {
+    font-size: 16px;
+    // darken是SCSS内置的一个函数，用于将颜色变暗。
+    // 它接受两个参数：要处理的颜色值和表示变暗程度的百分比值。这里我们将颜色变暗了20%。
+    color: darken($secondary-color, 20%);
+  }
+}
+
+// 定义 mixin 函数
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.box {
+  background-color: white;
+  padding: 20px;
+  @include border-radius(5px); // 使用 mixin 函数
+}
