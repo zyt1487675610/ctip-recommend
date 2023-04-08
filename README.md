@@ -22,6 +22,18 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## git 提交规范
+
+使用 Conventional Commits（约定式提交）
+
+feat: 新功能
+fix: bug 修复
+docs: 文档更新
+style: 代码样式调整（不影响代码功能的变动）
+refactor: 重构代码（既不是新增功能也不是修改 bug）
+test: 增加或修改测试代码
+chore: 构建过程或辅助工具的变动
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
