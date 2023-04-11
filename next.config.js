@@ -21,6 +21,7 @@ const nextConfig = {
     // 配置 assetPrefix，用于指定静态资源的路径，后续修改
     // assetPrefix: process.env.NODE_ENV === "production" ? "/your-subdirectory" : "",
   },
+  transpilePackages: ["antd-mobile"],
 };
 
 module.exports = nextConfig;
