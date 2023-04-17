@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.nextjs.cn",
       },
+      {
+        protocol: "https",
+        hostname: "youimg1.c-ctrip.com",
+      },
     ],
   },
   publicRuntimeConfig: {
