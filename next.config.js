@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "youimg1.c-ctrip.com",
       },
+      {
+        protocol: "https",
+        hostname: "dimg04.c-ctrip.com",
+      },
     ],
   },
   publicRuntimeConfig: {

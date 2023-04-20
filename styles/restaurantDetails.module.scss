@@ -7,3 +7,357 @@
   font-size: 48px;
   user-select: none;
 }
+// .rankingRestInfoBox{
+//   position: relative;
+//   margin-top: -15px;
+
+// }
+.headbox {
+  margin-top: -10px;
+  background: #fff;
+  border-radius: 12px 12px 0 0;
+  z-index: 11;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  .resName {
+    padding: 12px 12px 0;
+    border-radius: 12px 12px 0;
+  }
+  .restLableAndPrice {
+    display: flex;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    .restaurantcountbox {
+      border: 0.5px solid rgba(200, 44, 44, 0.2);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 6px;
+      height: 20px;
+      overflow: hidden;
+      margin-right: 6px;
+      .restScore {
+        background: #fff;
+        padding: 0 4px;
+        height: 19px;
+        line-height: 17px;
+        margin-top: 1px;
+      }
+      .restNum {
+        font-family: "20TH_bold";
+        font-size: 12px;
+        color: #c82c2c;
+      }
+      .restText {
+        font-family: PingFangSC-Regular;
+        font-size: 11px;
+        color: #c82c2c;
+      }
+      .restCommentCount {
+        background: #fff;
+        padding: 0 6px;
+        font-size: 12px;
+        color: #333;
+        position: relative;
+        height: 18px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .leftBox {
+    flex: 1;
+  }
+  .rightBox {
+    display: flex;
+    align-items: center;
+    width: 72px;
+    .line {
+      height: 33px;
+      width: 0.5px;
+      margin: 0 10px;
+      background: #ececec;
+    }
+    .iconBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+  }
+
+  .averagePrice {
+    font-size: 11px;
+    color: #333;
+    margin-right: 6px;
+    line-height: 20px;
+  }
+  .restaurantcountbox {
+    border: 0.5px solid rgba(200, 44, 44, 0.2);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    height: 20px;
+    overflow: hidden;
+    margin-right: 6px;
+    .restScore {
+      background: #fff;
+      padding: 0 4px;
+      height: 19px;
+      line-height: 17px;
+      margin-top: 1px;
+    }
+    .restNum {
+      font-family: "20TH_bold";
+      font-size: 12px;
+      color: #c82c2c;
+    }
+    .restText {
+      font-family: PingFangSC-Regular;
+      font-size: 11px;
+      color: #c82c2c;
+    }
+    .restCommentCount {
+      background: #fff;
+      padding: 0 6px;
+      font-size: 12px;
+      color: #333;
+      position: relative;
+      height: 18px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .averagePrice {
+    font-size: 11px;
+    color: #333;
+    margin-right: 6px;
+    line-height: 20px;
+  }
+  .businessTime {
+    display: flex;
+    align-items: center;
+    font-family: PingFangSC-Light;
+    font-size: 10px;
+    color: #666;
+    padding: 0 12px;
+    height: 44px;
+    .facilityNameList {
+      font-family: PingFangSC-Light;
+      line-height: 12px;
+      margin-top: 2px;
+    }
+    .facilityName {
+      opacity: 0.5;
+      border: 0.5px solid #999;
+      border-radius: 2px;
+      margin-right: 2px;
+      padding: 0 3px;
+      font-size: 10px;
+      color: #999;
+      height: 16px;
+      line-height: 16px;
+    }
+  }
+  .phoneAndMap {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-family: PingFangSC-Light;
+    font-size: 10px;
+    color: #666;
+    margin: 0 12px;
+    height: 44px;
+    .adress {
+      font-family: PingFangSC-Medium;
+      font-size: 12px;
+      color: #333;
+      line-height: 14px;
+    }
+    .routePlanning {
+      font-family: PingFangSC-Light;
+      line-height: 12px;
+      margin-top: 2px;
+    }
+  }
+}
+// 点评模块
+.commentBox {
+  background-color: #fff;
+  margin-bottom: 4px;
+  .commentTitle {
+    height: 50px;
+    flex: 1;
+    display: flex;
+    padding-left: 12px;
+    padding-right: 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .titleLeft {
+      font-family: PingFangSC-Medium;
+      font-size: 18px;
+      color: #333;
+      letter-spacing: 0.34px;
+      font-weight: 600;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      .titleCount {
+        font-size: 15px;
+        color: #333;
+        letter-spacing: 0;
+        margin-left: 2px;
+      }
+    }
+    .titleRight {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100%;
+      .titleRange {
+        color: #666;
+        font-size: 13px;
+      }
+    }
+  }
+  .hotTags {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 7px 0 0;
+    padding-left: 12px;
+    .item {
+      font-size: 12px;
+      padding: 0 12px;
+      border-radius: 14px;
+      overflow: hidden;
+      color: #333;
+      margin-right: 8px;
+      height: 28px;
+      line-height: 28px;
+      position: relative;
+      margin-bottom: 6px;
+    }
+  }
+  .commentItem {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 12px 16px;
+    .itemTitle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+    }
+    .itemTitle {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+      .userHeader {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+      .heaDefault {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+      .nameMsg {
+        display: flex;
+        flex: 1;
+        margin-left: 8px;
+        flex-direction: column;
+        .titleName {
+          display: flex;
+          flex-direction: row;
+          font-size: 18px;
+          .name {
+            margin-right: 8px;
+            color: #222;
+            font-size: 14px;
+            line-height: 20px;
+            vertical-align: middle;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+        }
+      }
+      .itemDes {
+        margin-top: 8px;
+        font-size: 15px;
+        line-height: 22px;
+        color: #222;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+  }
+}
+
+.iconRight {
+  font-size: 12px;
+  color: #666;
+  margin-left: 2px;
+}
+.recommandBox {
+  padding: 0 12px;
+  .wfContentTitle {
+    font-size: 20px;
+    font-family: PingFangSC-Semibold;
+    line-height: 25px;
+    color: #333;
+    font-weight: 600;
+  }
+  .wfList {
+    width: 100%;
+    .container {
+      position: relative;
+      height: 5873.13px;
+      .wfItem {
+        height: 3167.66px;
+        position: absolute;
+        // left: 0px;
+        // top: 0px;
+
+        .imageView {
+          background-color: #f5f5f5;
+          width: 100%;
+          .itemImage {
+            position: relative;
+            background: #d8d8d8;
+            border-radius: 5px 5px 0 0;
+            z-index: 1;
+            overflow: hidden;
+            width: 173px;
+            height: 256.222px;
+          }
+        }
+        .distanceDesc {
+          background-image: linear-gradient(rgba(51, 51, 51, 0) 10%, rgb(51, 51, 51) 50%);
+          width: 100%;
+          height: 110px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          z-index: 2;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
