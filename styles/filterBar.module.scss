@@ -1,0 +1,12 @@
+.container {
+  margin: 0px;
+//   position: absolute;
+  background-color: #fafafa;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}

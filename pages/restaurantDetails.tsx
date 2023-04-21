@@ -7,6 +7,20 @@ import Styles from "../styles/restaurantDetails.module.scss";
 import Imperative from "../components/Imperative";
 import RecommendList from "../components/RecommendList";
 
+const payload = {
+  PageIndex: 1,
+  PageSize: 20,
+  OrderType: "distance",
+  PositionLatLonName: "上海",
+  PositionLat: 31.231136,
+  PositionLon: 121.468439,
+  MeiShiLinTypes: [1, 2],
+};
+interface recommendListProps {
+  PageIndex: number;
+  PageSize: number;
+}
+
 const RestaurantDetails: React.FC = () => {
   const [restaurant, setRestaurant] = useState<RestaurantProps | undefined>(undefined);
   const router = useRouter();
@@ -30,6 +44,34 @@ const RestaurantDetails: React.FC = () => {
     id && fetchRestaurantDetails(id);
     console.log("restaurant.FacilityNames", restaurant?.FacilityNames);
   }, [id]);
+ // 推荐部分
+  // 定义一个异步函数来请求推荐列表数据
+  async function fetchRecommendList(payload: recommendListProps) {
+    const response = await fetch("/api/getRecommendList", {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    const data = await response.json();
+    return data;
+  }
+
+  fetchRecommendList(payload)
+    .then((data) => {
+      console.log("data123123123", data);
+      // 在这里处理获取到的推荐列表数据，比如渲染到页面上
+    })
+    .catch((error) => {
+      console.error(error);
+      // 在这里处理错误情况，比如显示错误提示信息到页面上
+    });
 
   return (
     <div>

@@ -4,6 +4,7 @@ import { Card, Toast, Button } from "antd-mobile";
 import Banner, { Image } from "../components/Banner";
 import RestaurantList from "../components/RestaurantList";
 // import { mockRestaurantData } from "./api/mock";
+import FilterBar from "../components/FilterBar";
 
 export default function Home() {
   let imagesList: Image[] = [
@@ -19,6 +20,8 @@ export default function Home() {
     PageIndex: 1,
     PageSize: 10,
   };
+  const [selectedFilters, setSelectedFilters] = useState([]);
+
   return (
     <>
       <Head>
@@ -32,7 +35,7 @@ export default function Home() {
           <Banner images={imagesList} />
         </Card>
         {/* 实现一个下拉菜单组件,用于选择筛选参数,包括位置\菜系\筛选\只能排序 */}
-
+        <FilterBar />
         <RestaurantList filterItems={filterItems} />
       </div>
     </>
