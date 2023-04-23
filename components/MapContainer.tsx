@@ -1,12 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./mapContainer.module.scss";
 
-type Props = {};
+interface Props {
+  data: {
+    name: string;
+    lat: number;
+    lng: number;
+    address: string;
+  };
+}
 
-const MapContainer: React.FC = ({}: Props) => {
+const MapContainer: React.FC<Props> = ({ data }) => {
   const [mapInstance, setMapInstance] = useState<any>({});
-  const [amapLoaded, setAmapLoaded] = useState(false);
-  const [position, setPosition] = useState<Number[]>([]);
+  const { name, lat, lng, address } = data;
+  console.log(data);
+
+  const mapRef = useRef(null); // 创建一个指向 <div id="container"> 的引用
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -17,65 +26,75 @@ const MapContainer: React.FC = ({}: Props) => {
             version: "2.0",
             plugins: ["AMap.Geolocation", "AMap.Scale", "AMap.Driving"],
           }).then((AMap) => {
-            const map = new AMap.Map("container", {
+            const map = new AMap.Map(mapRef.current, {
               viewMode: "3D",
-              zoom: 10,
-              center: [116.397428, 39.90923],
+              zoom: 17,
+              center: [lng, lat],
+              // center: [116.397428, 39.90923],
             });
 
             const geolocation = new AMap.Geolocation({
               enableHighAccuracy: true,
               timeout: 10000,
               buttonPosition: "RB",
+              position: [lng, lat],
               buttonOffset: new AMap.Pixel(10, 20),
               zoomToAccuracy: true,
             });
 
-            geolocation.getCurrentPosition((status: string, result: any) => {
-              if (status === "complete") {
-                const lnglat = [result.position.lng, result.position.lat];
-                setPosition(lnglat);
-                map.setZoomAndCenter(16, lnglat);
-              }
-            });
-            // const content = '<div class="marker-route marker-marker-bus-from">marker</div>';
-
-            // const marker = new AMap.Marker({
-            //   content: content, // 自定义点标记覆盖物内容
-            //   position: position, // 基点位置
-            //   offset: new AMap.Pixel(-17, -42), // 相对于基点的偏移位置
+            // geolocation.getCurrentPosition((status: string, result: any) => {
+            //   if (status === "complete") {
+            //     const lnglat = [result.position.lng, result.position.lat];
+            //     setPosition(lnglat);
+            //     map.setZoomAndCenter(16, lnglat);
+            //   }
             // });
+            const content1 = `<div class="${styles.marker}">
+            <h3>${name}</h3>
+            </div>`;
 
-            // map.add(marker);
+            const icon = new AMap.Icon({
+              size: new AMap.Size(40, 50), // 图标尺寸
+              image: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png", // Icon的图像
+              imageOffset: new AMap.Pixel(0, 0), // 图像相对展示区域的偏移量，适于雪碧图等
+              imageSize: new AMap.Size(40, 50), // 根据所设置的大小拉伸或压缩图片
+            });
+            const marker1 = new AMap.Marker({
+              content: content1,
+              position: [lng, lat], // set the correct position here
+              offset: new AMap.Pixel(-17, -42),
+            });
+            const marker2 = new AMap.Marker({
+              icon: icon,
+              position: [lng, lat], // set the correct position here
+              offset: new AMap.Pixel(-17, -42),
+            });
+            map.add(marker1);
+
+            map.add(marker2);
 
             setMapInstance(map);
             map.addControl(new AMap.Scale());
             map.addControl(geolocation);
-            let driving = new AMap.Driving({
-              map: map,
-              policy: AMap.DrivingPolicy.LEAST_TIME,
-            });
-            let startLngLat = [116.379028, 39.865042];
-            let endLngLat = [116.427281, 39.903719];
-            driving.search(startLngLat, endLngLat);
           });
         })
-        .then(() => {
-          setAmapLoaded(true);
-        })
+        .then(() => {})
         .catch((e) => {
           console.log(e);
         });
     }
-  }, []);
+    return () => {
+      if (mapInstance.destroy) {
+        mapInstance.destroy();
+      }
+    };
+  }, [data]);
 
   return (
     <div>
-      {amapLoaded && (
-        <div id="container" className={styles.map} style={{ height: "800px" }}>
-          地图加载中...
-        </div>
-      )}
+      <div ref={mapRef} id="container" className={styles.map} style={{ height: "800px" }}>
+        地图加载中...
+      </div>
     </div>
   );
 };

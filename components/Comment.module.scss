@@ -1,0 +1,78 @@
+.commentItem {
+  margin: 0 10px;
+  padding: 12px 12px 16px 0;
+  // 背景颜色
+//   background-color: #f5f5f5;
+  .titleNav {
+    position: relative;
+    width: 90%;
+    height: 30%;
+    margin: 10px;
+    justify-content: center;
+    img {
+      border-radius: 50%;
+    }
+  }
+  .userName {
+    position: relative;
+    top: -22px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+  .userLable {
+    position: relative;
+    top: -24px;
+    margin-left: 10px;
+    font-size: 10px;
+    // 边框颜色
+    border: 1px solid #1ad2f7;
+    background-color: #1ad2f7;
+    padding: 1px 2px;
+    border-radius: 4px;
+    // 字体颜色
+    color: white;
+  }
+  .commentImage {
+    position: relative;
+    left: -100px;
+  }
+  .commentScore {
+    position: relative;
+    left: -95px;
+    font-size: 11px;
+    color: #4d270a;
+  }
+  .commertContainter {
+    padding: 0px 12px;
+    .commentText {
+      margin-top: 8px;
+      font-size: 15px;
+      line-height: 22px;
+      color: #222;
+      display: inline-block;
+      width: 300px;
+      height: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .commentImageContainer {
+      display: flex;
+      flex-direction: row;
+      margin-left: 100px;
+      position: relative;
+      z-index: 1;
+      margin-top: 12px;
+      .commentImage {
+        width: 48%;
+        height: 45%;
+        margin-right: 8px;
+        border-radius: 4px;
+        // overflow-x: hidden; 
+
+      }
+    }
+  }
+}

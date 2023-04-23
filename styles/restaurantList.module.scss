@@ -1,8 +1,9 @@
 .card {
   width: 100%;
-  height: 200px;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 8px;
+  margin:0 0 9px 0;
+  border-radius: 4px;
+  background-color: #fff;
   transition: all 0.3s ease-out;
   cursor: pointer;
   &:active {
@@ -16,5 +17,49 @@
 .restImg {
   background: #d8d8d8;
   border-radius: 4px;
+  overflow: hidden;
+}
+.restaurantCommentContainer{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.restaurantName {
+  color: #222;
+  font-size: 17px;
+  font-family: PingFangSC-Semibold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  flex: 1;
+  height: 21px;
+  line-height: 21px;
+}
+.restaurantScore {
+  font-size: 14px;
+  font-family: PingFangSC-Medium;
+  color: #dd2626;
+  .restaurantNameIcon {
+    margin: 0 4px;
+    color: #b8b4b4;
+  }
+  .restaurantCommentCount {
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+  }
+  .averagePrice {
+    font-size: 12px;
+    color: rgb(51, 51, 51);
+  }
+}
+.restaurantNoScore {
+  font-size: 12px;
+  color: #333;
+  font-family: PingFangSC-Regular;
+}
+.cuisinelocation {
+  font-size: 12px;
+  color: #999;
+  flex: 1;
+  text-overflow: ellipsis;
   overflow: hidden;
 }
