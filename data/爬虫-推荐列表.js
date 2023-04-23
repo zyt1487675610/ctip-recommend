@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 // 读取 JSON 文件
-const data = fs.readFileSync("./data/recommendFake.json", "utf8");
+const data = fs.readFileSync("./recommendFake.json", "utf8");
 
 const jsonData = JSON.parse(data);
 
@@ -9,10 +9,10 @@ const jsonData = JSON.parse(data);
 const recommendList = [];
 jsonData.forEach((item) => {
   item.aroundRecommendInfos.forEach((info) => {
-    if (info.recommendType === 1) {
+    if (info.recommendType === 2) {
       recommendList.push(info);
     }
   });
 });
-fs.writeFileSync("./data/recommendList.json", JSON.stringify(recommendList));
+fs.writeFileSync("./recommendList.json", JSON.stringify(recommendList));
 console.log("成功创建 recommendList.json 文件");
