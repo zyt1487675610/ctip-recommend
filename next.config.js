@@ -22,6 +22,18 @@ const nextConfig = {
         protocol: "https",
         hostname: "dimg04.c-ctrip.com",
       },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "pic.616pic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dimg04.c-ctrip.com",
+      },
     ],
   },
   publicRuntimeConfig: {
