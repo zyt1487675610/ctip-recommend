@@ -17,8 +17,6 @@ interface RecommendListResponse {
     items: RecommendListItem[];
 }
 
-const jsonParser = bodyParser.json();
-
 export default function handler(req: NextApiRequest, res: NextApiResponse<RecommendListResponse>) {
     const payload = req.body as RecommendListFilterPayload;
 
