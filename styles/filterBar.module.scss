@@ -1,12 +1,55 @@
 .container {
-  margin: 0px;
-//   position: absolute;
+  margin: 10px 0;
+  // position: absolute;
   background-color: #fafafa;
+  // background-color: red;
 }
+
 .sticky {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   z-index: 99;
+  // padding: 10px;
+}
+
+.dropdown {
+  width: 100%;
+}
+
+.boxContainer {
+  // height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  .side {
+    flex: none;
+  }
+
+  .main {
+    flex: auto;
+    .content {
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-size: 32px;
+      color: #cccccc;
+      position: relative;
+      &.active {
+        display: flex;
+        max-height: 40vh;
+        overflow-y: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      .checkItem {
+        width: 100%;
+        height: fit-content;
+      }
+    }
+  }
 }
