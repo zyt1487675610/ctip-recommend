@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import recommendList from "../../pages/api/recommendList.json";
-import bodyParser from 'body-parser';
+import recommendList from "../../data/recommendList.json";
 
 interface RecommendListFilterPayload {
     PageIndex?: number;

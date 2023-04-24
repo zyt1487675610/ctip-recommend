@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import restaurantList from "../../pages/api/restaurant_list_ecust.json";
+import restaurantList from "../../data/restaurant_list_ecust.json";
 import bodyParser from 'body-parser';
 
 interface RestaurantListFilterPayload {
