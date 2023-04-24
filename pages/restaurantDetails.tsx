@@ -57,6 +57,10 @@ const RestaurantDetails: React.FC = () => {
     });
   }
 
+  const handleClick = () => {
+    router.push(`/commentList`);
+  };
+
   return (
     <div className={Styles.container}>
       <div className="navbar">
@@ -147,7 +151,7 @@ const RestaurantDetails: React.FC = () => {
                 <span className={Styles.titleCount}>({restaurant.CommentCount})</span>
               </div>
               <div className={Styles.titleRight}>
-                <span className={Styles.titleRange}>查看全部</span>
+                <span className={Styles.titleRange} onClick={handleClick}>查看全部</span>
                 <span className={Styles.iconRight}>
                   <RightOutline />
                 </span>
@@ -155,7 +159,7 @@ const RestaurantDetails: React.FC = () => {
             </div>
 
             <Comment id={id} />
-            <div className={Styles.commentItem}>
+            {/* <div className={Styles.commentItem}>
               <div className={Styles.itemTitle}>
                 <div className={Styles.userHeader}>
                   <img
@@ -192,7 +196,7 @@ const RestaurantDetails: React.FC = () => {
                   味道不错，口味也不错，服务态度也不错，环境也不错，价格也不错，总体来说还是不错的，下次还会来的
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* 更多推荐 */}
