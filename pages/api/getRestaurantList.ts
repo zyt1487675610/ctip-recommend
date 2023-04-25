@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import restaurantList from "../../pages/api/restaurant_list_ecust.json";
+import restaurantList from "../../data/restaurant_list_ecust.json";
 import bodyParser from 'body-parser';
 
 interface RestaurantListFilterPayload {
@@ -68,7 +68,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<Restau
 
     const startIndex = 5 * ((payload.PageIndex || 1) - 1);
     const endIndex = startIndex + (payload.PageSize || 5);
-    console.log(startIndex, endIndex);
+    // console.log(startIndex, endIndex);
 
     const total = filteredItems.length;
     const items = filteredItems.slice(startIndex, endIndex);

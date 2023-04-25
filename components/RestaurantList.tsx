@@ -61,13 +61,12 @@ const RestaurantList: React.FC<Props> = ({ filterItems }) => {
   // }, [filterItems]);
 
   /**
-   * 瀑布屏，当用户页面滚动到底部 threshold (默认为 250px)时调用。
+   * 无限滚动，当用户页面滚动到底部 threshold (默认为 250px)时调用。
    * PageIndex：第几次加载
    * PageSize：每次加载的数量
    * 针对RestaurantId去重，防止重复
    */
   async function loadMore() {
-    console.log("loadMore");
     setPageIndex((val) => val + 1);
     const res = await fetchRestaurantList({ ...filterItems, PageIndex: PageIndex });
     setRestaurantList((val) => {
@@ -83,28 +82,32 @@ const RestaurantList: React.FC<Props> = ({ filterItems }) => {
     <div>
       {restaurantList &&
         restaurantList.map((item) => (
-          <Card
-            onClick={() => handleClick(item.RestaurantId)}
-            className={Styles.card}
-            key={item.RestaurantId}
-            title={item.Name}
-            extra={
-              <div>
-                <span>评分：{item.CommentScore}</span>
-                <span>距离：{item.DistanceDesc}</span>
-              </div>
-            }
-          >
+          <Card className={Styles.card} key={item.RestaurantId} onClick={() => handleClick(item.RestaurantId)}>
             <Grid columns={3} gap={8}>
               <Grid.Item span={1} className={Styles.gridImg}>
                 {/* 如果暂停营业，要加上遮罩层 */}
                 <Image src={item.ImageUrl} className={Styles.restImg} alt={"餐厅图片"} width={85} height={85} />
               </Grid.Item>
               <Grid.Item span={2}>
-                <div>地址：{item.ZoneName}</div>
-                <div>菜系：{item.CuisineName}</div>
-                <div>评价数量：{item.CommentCount}</div>
-                <div>人均消费：{item.AveragePrice}</div>{" "}
+                <div className={Styles.restaurantName}>{item.Name}</div>
+                <div className={Styles.restaurantCommentContainer}>
+                  {item.CommentScore ? (
+                    <div className={Styles.restaurantScore}>
+                      {item.CommentScore}分<span className={Styles.restaurantNameIcon}>|</span>
+                      <span className={Styles.restaurantCommentCount}>{item.CommentCount}条点评</span>
+                      <span className={Styles.restaurantNameIcon}>|</span>
+                      <span className={Styles.averagePrice}>￥{item.AveragePrice}/人</span>
+                    </div>
+                  ) : (
+                    <div className={Styles.restaurantNoScore}>暂无评分</div>
+                  )}
+                </div>
+
+                <div className={Styles.cuisinelocation}>
+                  {item.CuisineName}
+                  <span> {item.ZoneName}</span>
+                </div>
+                {/* <div className={Styles.restaurantAddress}>{item.Address}</div> */}
               </Grid.Item>
             </Grid>
           </Card>

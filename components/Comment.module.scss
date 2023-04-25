@@ -1,0 +1,124 @@
+.commentNav {
+  height: 44px;
+  top: 0;
+  line-height: 44px;
+  text-align: center;
+  background-color: #19a0f0;
+  color: #fff;
+  z-index: 960;
+}
+.commentTop {
+  background-color: #fff;
+  padding: 12px 16px;
+  .scoreAverage {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #222;
+    .total {
+      margin-left: 4px;
+      margin-right: 8px;
+      font-weight: bold;
+      font-size: 20px;
+      color: #0099f7;
+    }
+  }
+  .detailsContainer {
+    margin-top: 10px;
+    .details {
+      flex: 1;
+      overflow: hidden;
+      margin-right: 8px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 14px;
+      color: #666;
+      font-weight: bold;
+    }
+  }
+}
+
+.commentItem {
+  margin: 0;
+  padding: 12px 12px 16px 12px;
+  // 背景颜色
+  //   background-color: #f5f5f5;
+  background-color: #fff;
+  .titleNav {
+    position: relative;
+    width: 90%;
+    height: 30%;
+    margin: 10px;
+    justify-content: center;
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  .userName {
+    position: relative;
+    top: -22px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+  .userLable {
+    position: relative;
+    top: -24px;
+    margin-left: 10px;
+    font-size: 10px;
+    // 边框颜色
+    border: 1px solid #1ad2f7;
+    background-color: #1ad2f7;
+    padding: 1px 2px;
+    border-radius: 4px;
+    // 字体颜色
+    color: white;
+  }
+  .commentIcon {
+    position: relative;
+    left: -100px;
+  }
+  .commentScore {
+    position: relative;
+    left: -95px;
+    font-size: 11px;
+    color: #4d270a;
+  }
+  .commertContainter {
+    padding: 0px 12px;
+    .commentText {
+      -webkit-box-orient: vertical;
+      margin: 10px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      position: relative;
+      word-break: break-all;
+    }
+    
+    .showFull { /* 当用户点击“展示全部”按钮时，将样式更改为此 */
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    .commentImageContainer {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      .commentImage {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        scroll-snap-align: start;
+      }
+    }
+    .commentImageContainer::-webkit-scrollbar {
+      display: none; /* hide scrollbar */
+    }
+  }
+}

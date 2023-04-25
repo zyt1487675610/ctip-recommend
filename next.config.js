@@ -6,13 +6,33 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-
   images: {
+    // unoptimized: true,
     // 引用网络图片，需要配置
     remotePatterns: [
       {
         protocol: "https",
         hostname: "www.nextjs.cn",
+      },
+      {
+        protocol: "https",
+        hostname: "youimg1.c-ctrip.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dimg04.c-ctrip.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "pic.616pic.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dimg04.c-ctrip.com",
       },
       {
         protocol: "https",
