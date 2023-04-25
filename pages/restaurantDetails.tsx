@@ -99,7 +99,6 @@ const RestaurantDetails: React.FC = () => {
             <div className={Styles.restLableAndPrice}>
               <div className={Styles.restaurantcountbox}>
                 <div className={Styles.restScore}>{restaurant.CommentScore}分</div>
-                {/* 点评数*/}
                 <div className={Styles.restCommentCount}>
                   <span>{restaurant.CommentCount}条点评</span>
                   <RightOutline />
@@ -109,8 +108,8 @@ const RestaurantDetails: React.FC = () => {
             </div>
 
             {/* 营业时间,电话 */}
-            <div className={Styles.businessTime} onClick={pageToInfo}>
-              <div className={Styles.leftBox}>
+            <div className={Styles.businessTime} >
+              <div className={Styles.leftBox} onClick={pageToInfo}>
                 {restaurant.DisplayOpenStatus?.includes("营业中") ? (
                   <p>{restaurant.DisplayOpenStatus}</p>
                 ) : (
