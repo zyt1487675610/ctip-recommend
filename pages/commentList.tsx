@@ -64,7 +64,7 @@ const dataFock = [
     reply: 0,
   },
 ];
-const commentList: FC<Props> = (id) => {
+const CommentList: FC<Props> = (id) => {
   const [commentList, setCommentList] = useState(dataFock);
   const [imageViewerList, setImageViewerList] = useState<string[]>([]);
   const router = useRouter();
@@ -148,4 +148,4 @@ const commentList: FC<Props> = (id) => {
   );
 };
 
-export default commentList;
+export default CommentList;

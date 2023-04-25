@@ -6,8 +6,8 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-
   images: {
+    // unoptimized: true,
     // 引用网络图片，需要配置
     remotePatterns: [
       {

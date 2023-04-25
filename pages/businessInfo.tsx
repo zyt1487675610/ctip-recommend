@@ -3,7 +3,7 @@ import { NavBar, Card } from "antd-mobile";
 import { useRouter } from "next/router";
 import Styles from "../styles/businessInfo.module.scss";
 
-const businessInfo: React.FC = () => {
+const BusinessInfo: React.FC = () => {
   const router = useRouter();
   const { name, openStatus, openTime, address } = router.query;
 
@@ -39,4 +39,4 @@ const businessInfo: React.FC = () => {
   );
 };
 
-export default businessInfo;
+export default BusinessInfo;

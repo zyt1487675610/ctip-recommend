@@ -67,11 +67,12 @@ const RestaurantList: React.FC<Props> = ({ filterItems }) => {
    * 针对RestaurantId去重，防止重复
    */
   async function loadMore() {
-    console.log("loadMore");
     setPageIndex((val) => val + 1);
     const res = await fetchRestaurantList({ ...filterItems, PageIndex: PageIndex });
     setRestaurantList((val) => {
-      const filteredItems = res.items.filter((item: any) => !val.some((v: any) => v.RestaurantId === item.RestaurantId));
+      const filteredItems = res.items.filter(
+        (item: any) => !val.some((v: any) => v.RestaurantId === item.RestaurantId)
+      );
       return [...val, ...filteredItems];
     });
     setHasMore(res.items.length > 0);
@@ -81,7 +82,7 @@ const RestaurantList: React.FC<Props> = ({ filterItems }) => {
     <div>
       {restaurantList &&
         restaurantList.map((item) => (
-          <Card className={Styles.card} onClick={() => handleClick(item.RestaurantId)}>
+          <Card className={Styles.card} key={item.RestaurantId} onClick={() => handleClick(item.RestaurantId)}>
             <Grid columns={3} gap={8}>
               <Grid.Item span={1} className={Styles.gridImg}>
                 {/* 如果暂停营业，要加上遮罩层 */}

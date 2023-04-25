@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "prod": "next build && next start"
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
